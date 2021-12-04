@@ -4,9 +4,9 @@
   "version": "${version}",
 
   "name": "Cursed Fabric Ruby",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "An experiment of trying to run Ruby code and integrate it with CursedFabric.",
   "authors": [
-    "Me!"
+    "ChessChicken-KZ"
   ],
   "contact": {
     "homepage": "https://github.com/ChessChicken-KZ/RubyFabric",
