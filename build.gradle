@@ -1,22 +1,24 @@
 buildscript {
 	repositories {
-		mavenCentral()
-		jcenter()
 		maven {
 			name = "Fabric"
 			url = "https://maven.fabricmc.net/"
 		}
+		gradlePluginPortal()
+		mavenCentral()
+		jcenter()
 		maven {
 			name = "Jitpack"
 			url 'https://jitpack.io/'
 		}
 	}
 	dependencies {
-		classpath 'com.github.Chocohead:Fabric-Loom:e3d1762'
+		classpath 'com.github.Chocohead:Fabric-Loom:0d0261a'
 	}
 }
 
 plugins {
+	id 'checkstyle'
 	id 'maven-publish'
 }
 
@@ -43,8 +45,16 @@ eclipse {
 
 repositories {
 	maven {
+		name = "Fabric"
+		url = "https://maven.fabricmc.net/"
+	}
+	mavenLocal()
+	gradlePluginPortal()
+	mavenCentral()
+	jcenter()
+	maven {
 		name = "Jitpack"
-		url "https://jitpack.io/"
+		url 'https://jitpack.io/'
 	}
 }
 
@@ -82,7 +92,16 @@ dependencies {
 	// adds some useful annotations for miscellaneous uses. does not add any dependencies, though people without the lib will be missing some useful context hints.
 	compile 'org.jetbrains:annotations:16.0.2'
 
+	implementation "com.github.jhalterman:typetools:87240d6"
+	implementation "com.github.mineLdiver:expressions:2fa66db"
+	implementation "com.github.mineLdiver:UnsafeEvents:7efec57"
+
 	modImplementation "com.github.minecraft-cursed-legacy:cursed-fabric-loader:${project.loader_version}"
+
+	modImplementation 'com.github.ModificationStation:StationAPI:3553da6dd4'
+
+	implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.11.1'
+
 }
 
 processResources {
