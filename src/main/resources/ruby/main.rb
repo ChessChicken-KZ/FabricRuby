@@ -14,7 +14,7 @@ end
 class FABRICRUBY < FabricRubyModInstance
 
     def initialize()
-        @event_postInit_AnyCoolNameToo = TestPostInitEventImpl.new
+        @eventPOSTINIT_AnyCoolNameToo = TestPostInitEventImpl.new
     end
 
 end

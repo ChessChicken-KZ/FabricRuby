@@ -1,20 +1,14 @@
 require 'java'
 
 module Fabric
+    include_package 'net.fabricmc.loader'
     include_package 'net.fabricmc.loader.api'
     include_package 'kz.chesschicken.fabricruby'
-end
-
-module StationAPI
-    include_package 'net.modificationstation.stationapi.api.registry'
-end
-
-module Minecraft
-    include_package 'net.minecraft.block.material'
-    include_package 'net.minecraft.item'
-    include_package 'net.minecraft.item.tool'
+    include_package 'kz.chesschicken.fabricruby.api'
+    include_package 'kz.chesschicken.fabricruby.api.helper'
+    include_package 'kz.chesschicken.fabricruby.api.event'
 end
 
 def getMinecraftInstance()
-    return Fabric::FabricLoader.getInstance.getGameInstance
+    return Fabric::FabricRubyProvider.getMinecraftInstance
 end

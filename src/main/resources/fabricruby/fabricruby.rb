@@ -6,9 +6,9 @@ class FabricRubyModInstance include Fabric
 end
 
 def containsFabricRubyMod(id)
-    return Fabric::FabricRubyInit.containsFabricRubyMod(id)
+    return Fabric::FabricRubyProvider.containsFabricRubyMod(id)
 end
 
 def getFabricRubyMod(id)
-    return Fabric::FabricRubyInit.getFabricRubyMod(id)
+    return Fabric::FabricRubyProvider.getFabricRubyMod(id)
 end
